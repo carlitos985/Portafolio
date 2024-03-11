@@ -1,0 +1,468 @@
+@import url('https://fonts.cdnfonts.com/css/balisong');
+:root{
+    --bg-body:#111;
+    --bg-alt:#1f1f1f;
+    --txt-body:#f0f0f0;
+    --family-body:'Balisong', sans-serif;
+
+    /*--family-body:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+    --header-heigth:60px;
+    --primary-color:cyan;
+}
+.light{
+    --bg-body:#fff;
+    --bg-alt: #f2f2f2;
+    --txt-body:#222;
+    --primary-color:blueviolet;
+}
+html{
+    font-size: 62.5%S;
+    line-height: 1.5;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+*,*::before,::after{
+    box-sizing: inherit;
+    
+}
+
+body{
+    background-color: var(--bg-body);
+    color: var(--txt-body);
+    font-family: var(--family-body);
+    font-size: 1.8rem;
+    margin: 0;
+   
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+img{
+    height: auto;
+    max-width: 100%;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    font-size: 20px;
+    color: var(--txt-body);
+    align-items: center;
+}
+
+h3, h2{
+    color: var(--primary-color);
+}
+/*----------------CLASES REUTILIZABLES-------------------*/
+.container{
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main{
+    margin-top: var(--header-heigth);
+}
+
+.section{
+    padding: 90px 0 80px;
+}
+
+.section-title{
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title::before{
+    content: '💻 ';
+    
+}
+/*--------------NAVBAR------------------*/
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-heigth);
+    z-index: 5;
+    background-color: var(--bg-alt);
+}
+.nav{
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 900;
+}
+.logo span{
+    color: var(--primary-color);
+}
+
+.btn-close{
+    display: none;
+}
+.menu-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+   
+}
+
+/*----------de 0 a 768px----------------*/
+@media(max-width:768px){
+    .nav-menu{
+        position: fixed;
+        top: var(--header-heigth);
+        left: -100%;
+        width: 90%;
+        height: calc(100vh - var(--header-heigth));  
+        padding: 60px 20px 40px;
+        background-color: #222;
+        transition: left .5s ease-in-out;
+        
+    }
+
+    .show-menu{
+        left: 0;
+    }
+
+    .btn-close{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 28px;
+        display: block;
+
+    }
+
+    .menu-list{
+        flex-direction: column;
+    }
+    
+
+}
+/*.nav-menu{
+    display: none;
+}*/
+
+
+
+.list-link{
+    transition: color .3s;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.list-item.active .list-link{
+    color: var(--primary-color);
+}
+
+.list-link:hover{
+    color:var(--primary-color);
+}
+
+.actions{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+button.btn-open{
+    font-size: 28px;
+}
+.actions button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    font-size: 20px;
+    color: var(--txt-body);
+}
+
+
+
+/*---------Oculta el Menu de inicio-----------*/
+@media(min-width:768px){
+    button.btn-open{
+        display: none;
+    }
+}
+
+/*-----------Hero--------------------*/
+
+.hero{
+    width: 100%;
+    height: calc(100vh - var(--header-heigth));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-title{
+    font-size: 25px;
+    text-align: center;
+}
+
+.hero-title span{
+    color: var(--primary-color);
+}
+
+.hero-descritption{
+    font-size: 25px;
+    text-align: center;
+}
+
+.hero-descritption span{
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/*-----------Seccion About--------------------*/
+.about-img{
+    display: none;
+}
+
+.about-info{
+    display: flex;
+    flex-direction: column;
+    
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+@media(min-width:760px){
+    .about .container{
+        display: flex;
+        gap: 30px;
+    }
+
+    .about-img{
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /*flex-shrink:0 para que la imagen no se deforme*/
+    flex-shrink: 0;
+    border-radius: 300px;
+}
+}
+
+.btn-contact {
+    color: var(--primary-color);
+    font-family: var(--family-body);
+}
+
+
+.btn-contact i{
+    transform: translate(0);
+    transition: transform .3s;
+    font-size: 30;
+
+}
+
+.btn-contact:hover i{
+    transform: translateX(10px);
+    transition: transform .3s;
+
+}
+
+/*-----------Skills--------------------*/
+.skills-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.skills-tech{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+}
+
+.skill{
+    background-color: var(--bg-alt);
+    border-radius: 10px;
+    padding: 1.5em 1em;
+    text-align: center;
+    
+    
+}
+.skill img{
+    width: 50px;
+    height: auto;
+    
+}
+.skill h3{
+    font-size: 1.7rem;
+    margin: 0;
+    
+}
+
+.skills-soft{
+     background-color: var(--bg-alt);
+     border-radius: 10px;
+     padding: 1.5em 1em;
+     list-style: none;
+     
+     
+}
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+.skill-item svg{
+    width: 25px;
+    height: auto;
+    color: var(--primary-color);
+}
+/*----------PROJECTS------------------*/
+.projects-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    gap: 70px 40px;
+}
+
+.project-img{
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+.project-img img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    overflow: hidden;    
+}
+.overlay{
+    border: solid 1px var(--primary-color);
+   position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000e0;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility .3s;
+   
+}
+
+.overlay a{
+    display: flex;
+    background-color: var(--bg-alt);
+    padding: .7em;
+    border-radius: 50px;
+    
+}
+.overlay a:hover{
+    border: solid 2px var(--primary-color);
+}
+.project:hover .overlay{
+    opacity: 1;
+    visibility: visible;
+}
+.project-skills{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.project-skills span{
+    background-color: var(--bg-alt);
+    padding: .5em 1em;
+    border-radius: 5px;
+    font-size: 1.4rem;
+   
+}
+.project-skills span:hover{
+    background-color: var(--primary-color);
+    color: var(--bg-body);
+}
+
+/*----------TESTIMONIOS------------------*/
+.swiper{
+    padding: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper .card{
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.swiper .card-img{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.swiper .swiper-slide{
+    margin: 0;
+    height: auto;
+    width: 100%;
+    padding: 0;
+    opacity: 0.2;
+    background: var(--bg-alt);
+    border-radius: 6px;
+    transition:  all 0.5s ease-in-out;
+}
+
+.swiper .swiper-slide.swiper-slide-active{
+    opacity: 1;
+    scale: 1.1;
+    padding-top: 10px;
+}
+
+
+.swiper-button-prev, .swiper-rtl .swiper-button-next,
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    color: var(--primary-color);
+}
+.swiper-pagination-bullet{
+    background-color: var(--primary-color);
+    transition: all 0.2s ease-in-out;
+}
+.swiper-pagination-bullet-active{
+    transform: scale(1.5);
+}
+
+/*---------------CONTACT------------------*/
+.contact .container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+    
+}
+.box{
+    border: 1px solid var(--primary-color);
+}
