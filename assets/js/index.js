@@ -24,9 +24,10 @@ const skills =[
         name:'JavaScript'
     },
     {
-        path:'assets/img/git.svg',
-        name:'Git'
+        path:'assets/img/javascript.svg',
+        name:'JavaScript'
     },
+    
     {
         path:'assets/img/netlify.svg',
         name:'Netlify'
@@ -34,6 +35,10 @@ const skills =[
     {
         path:'assets/img/react.svg',
         name:'React'
+    },
+    {
+        path:'assets/img/nodejs.svg',
+        name:'NodeJS'
     },
 ]
 

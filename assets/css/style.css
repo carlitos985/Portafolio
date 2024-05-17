@@ -240,7 +240,7 @@ button.btn-open{
 .about-info{
     display: flex;
     flex-direction: column;
-    
+    font-weight: lighter;
     gap: 10px;
     margin-bottom: 30px;
 }
